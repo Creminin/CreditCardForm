@@ -1,16 +1,17 @@
 import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react"
 
-export const FormCard = () => {
+interface PropsForm {
+    Label: string;
+    InputType: string;
+    PlaceHolder?: string;
+}
+
+export const FormField = ({ Label, InputType, PlaceHolder } : PropsForm) => {
     return(
         <Box>
-            <FormControl>
-                <FormLabel>Número do cartão</FormLabel>
-                <Input />
-            </FormControl>
-
-            <FormControl>
-                <FormLabel></FormLabel>
-                <Input />
+            <FormControl isRequired>
+                <FormLabel>{Label}</FormLabel>
+                <Input type={InputType} placeholder={PlaceHolder} borderColor="gray.700"/>
             </FormControl>
         </Box>
     )
